@@ -7,7 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.codepath.apps.restclienttemplate.Adapter.PagerAdapter;
 import com.codepath.apps.restclienttemplate.Adapter.TweetAdapter;
+import com.codepath.apps.restclienttemplate.Fragment.TweetListFragment;
+import com.codepath.apps.restclienttemplate.ProfileActivity;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.TwitterApp;
 import com.codepath.apps.restclienttemplate.TwitterClient;
@@ -19,11 +22,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcels;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-import static android.R.attr.data;
 
 public class TimelineActivity extends AppCompatActivity {
 
@@ -32,30 +39,38 @@ public class TimelineActivity extends AppCompatActivity {
     ArrayList<Tweet> tweets;
     RecyclerView rvTweets;
     final int REQUEST_CODE = 20;
+    ViewPager vpPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
 
         // get access to Twitter client
-        client = TwitterApp.getRestClient();
+        //client = TwitterApp.getRestClient();
 
         // find the RecyclerView
-        rvTweets = (RecyclerView)findViewById(R.id.rvTweet);
+        // rvTweets = (RecyclerView)findViewById(R.id.rvTweet);
 
         // init the arrayList (data source)
-        tweets = new ArrayList<>();
+        // tweets = new ArrayList<>();
 
         // construct the adapter from this data source
-        tweetAdapter = new TweetAdapter(tweets);
+        //tweetAdapter = new TweetAdapter(tweets,this);
 
         // RecyclerView setup (layout manager, use adapter)
-        rvTweets.setLayoutManager(new LinearLayoutManager(this));
+        // rvTweets.setLayoutManager(new LinearLayoutManager(this));
 
         // set the adapter
-        rvTweets.setAdapter(tweetAdapter);
+        // rvTweets.setAdapter(tweetAdapter);
 
-        populateTimeline();
+        // populateTimeline();
+        vpPager = (ViewPager) findViewById(R.id.viewpager);
+        vpPager.setAdapter(new PagerAdapter(getSupportFragmentManager(), this));
+        // set the adapter for the pager
+        // setup the TabLayout to use the view pager
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(vpPager);
     }
 
     private void populateTimeline() {
@@ -115,6 +130,18 @@ public class TimelineActivity extends AppCompatActivity {
                 throwable.printStackTrace();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.timeline, menu);
+        return true;
+    }
+
+    public void onProfileView(MenuItem item) {
+        // launch the profile view
+        Intent i = new Intent(this, ProfileActivity.class);
+        startActivity(i);
     }
 
 
