@@ -1,3 +1,40 @@
+# Project 4 - codepath-My Simple Tweets
+
+Time spent: 22 hours spent in total
+
+## User Stories
+
+The following **required** functionality is completed:
+
+* [x] The app includes **all required user stories** from Week 3 Twitter Client
+* [x]User can sign in to Twitter using OAuth login (2 points)
+* [x]User can view the tweets from their home timeline (4 points)
+* [x]User should be displayed the username, name, and body for each tweet
+* [x]User should be displayed the relative timestamp for each tweet "8m", "7h"
+* [x]User can view more tweets as they scroll with infinite pagination
+* [x]User can compose a new tweet (4 points)
+* [x]User can click a "Compose" icon in the AppBar on the top right (created at bottom left)
+* [x]User can then enter a new tweet and post this to twitter
+* [x]User is taken back to home timeline with new tweet visible in timeline
+* [x]Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
+
+
+
+## Video Walkthrough
+<img src='https://github.com/SiddhataPatil/SimpleTweets/blob/master/Twitter.gif' width="370" height="750" />
+
+
+
+## Open-source libraries used
+
+- [Android Async HTTP](https://github.com/loopj/android-async-http) - Simple asynchronous HTTP requests with JSON parsing
+- [Picasso](http://square.github.io/picasso/) - Image loading and caching library for Android
+
+
+
+
+
+
 # RestClientTemplate [![Build Status](https://travis-ci.org/codepath/android-rest-client-template.svg?branch=master)](https://travis-ci.org/codepath/android-rest-client-template)
 
 ## Overview
