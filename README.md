@@ -17,6 +17,10 @@ The following **required** functionality is completed:
 * [x] User is taken back to home timeline with new tweet visible in timeline
 * [x] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
 
+The following **additional** features are implemented:
+
+* [x] User can see a counter with total number of characters left for tweet on compose tweet page
+* [x] User can tap a tweet to open a detailed tweet view
 
 
 ## Video Walkthrough
