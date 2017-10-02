@@ -5,7 +5,7 @@
         android:id="@+id/miCompose"
         android:icon="@drawable/ic_launcher"
         android:onClick="onComposeAction"
-        android:title="@string/compose_title"
+        android:title="Follow"
         app:showAsAction="always"></item>
 
     <item
