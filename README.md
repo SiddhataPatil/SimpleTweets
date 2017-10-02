@@ -6,7 +6,6 @@ Time spent: 22 hours spent in total
 
 The following **required** functionality is completed:
 
-* [x] The app includes **all required user stories** from Week 3 Twitter Client
 * [x]User can sign in to Twitter using OAuth login (2 points)
 * [x]User can view the tweets from their home timeline (4 points)
 * [x]User should be displayed the username, name, and body for each tweet
